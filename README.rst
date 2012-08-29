@@ -1,5 +1,10 @@
-`dj cmd` for short
-==================
+`dj cmd`, for short
+===================
+
+.. image::
+    https://secure.travis-ci.org/nigma/dj-cmd.png?branch=master
+    :alt: Build Status
+    :target: https://secure.travis-ci.org/nigma/dj-cmd
 
 Tired of typing `python manage.py runserver`? Just 
 
