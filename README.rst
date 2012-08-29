@@ -39,12 +39,12 @@ Currently supported commands:
 - any valid ``manage.py`` command
 
 
-Alternatively, additional aliases can be specified with `~/dj.ini` file.
+Alternatively, additional aliases can be specified with the ``~/dj.ini`` file.
 
-If the `.dj.ini` config file is present in the user's home directory,
+If the ``.dj.ini`` config file is present in the user's home directory,
 it is used to populate list of command aliases.
 
-Example of config file::
+Example of the config file::
 
     [commands]
     h=help
