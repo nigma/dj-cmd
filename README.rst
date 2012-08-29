@@ -1,18 +1,22 @@
-`dj cmd`, for short
-===================
+``dj cmd``, for short
+=====================
 
 .. image::
     https://secure.travis-ci.org/nigma/dj-cmd.png?branch=master
     :alt: Build Status
     :target: https://secure.travis-ci.org/nigma/dj-cmd
 
-Tired of typing `python manage.py runserver`? Just 
+Tired of typing ``python manage.py runserver``? Just
 
-  `pip install dj-cmd` 
+::
+
+    pip install dj-cmd
 
 and then
 
-  `dj run` 
+::
+
+    dj run
 
 from any project's subdirectory.
 
@@ -20,7 +24,7 @@ Features
 --------
 
 - saves typing
-- automatically locates `manage.py` script in current or parent directories
+- automatically locates ``manage.py`` script in current or parent directories
 - works great with virtualenv and on Windows
 
 Commands
@@ -31,13 +35,13 @@ it by forking the project and adding yours to the `aliases.py`_ file.
 
 Currently supported commands:
 
-- run - runserver
-- any valid `manage.py` command
+- ``run`` - runserver
+- any valid ``manage.py`` command
 
 License
 -------
 
-`dj-cmd` is released under the BSD license.
+``dj-cmd`` is released under the BSD license.
 
 
 Similar projects
