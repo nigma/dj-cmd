@@ -60,7 +60,7 @@ def run(command=None, *params):
         args.append(command)
     args.extend(params)
 
-    return subprocess.call(args, shell=True)
+    return subprocess.call(args)
 
 
 def main():
