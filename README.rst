@@ -38,6 +38,8 @@ Currently supported commands:
 - ``run`` - runserver
 - any valid ``manage.py`` command
 
+Config file
++++++++++++
 
 Alternatively, additional aliases can be specified with the ``~/dj.ini`` file.
 
