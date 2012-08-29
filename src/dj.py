@@ -8,14 +8,46 @@ import os
 import subprocess
 import sys
 
-from .aliases import COMMANDS
+from .aliases import DEFAULT_COMMANDS
+
+CONFIG_FILE = os.path.expanduser(os.path.join("~", ".dj.ini"))
+
+
+def get_commands(config_file=CONFIG_FILE, section="commands",
+                 default_commands=DEFAULT_COMMANDS):
+    """
+    Read alias definition from `~/dj.ini` file.
+
+    If the `.dj.ini` config file is present in the user's home directory,
+    it is used to populate list of command aliases.
+
+    Example of config file::
+
+        [commands]
+        h=help
+        rs=runserver
+    """
+    commands = default_commands.copy()
+
+    if os.path.exists(config_file):
+        from ConfigParser import ConfigParser
+        parser = ConfigParser()
+        parser.read([config_file])
+        if parser.has_section(section):
+            commands.update(
+                dict(parser.items(section))
+            )
+
+    return commands
+
 
 def resolve_command(command):
     """
     Lookups command in the alias dict.
     """
-    if command and command in COMMANDS:
-        command = COMMANDS[command]
+    commands = get_commands()
+    if command and command in commands:
+        command = commands[command]
     return command or ""
 
 
@@ -52,8 +84,8 @@ def run(command=None, *params):
     """
     Locates manage script and invokes it with resolved command param.
     """
-    command = resolve_command(command)
     script_path = find_script()
+    command = resolve_command(command)
 
     args = [sys.executable, script_path]
     if command:
