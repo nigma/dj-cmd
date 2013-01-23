@@ -2,9 +2,9 @@
 =====================
 
 .. image::
-    https://secure.travis-ci.org/nigma/dj-cmd.png?branch=master
+    https://api.travis-ci.org/nigma/dj-cmd.png?branch=master
     :alt: Build Status
-    :target: https://secure.travis-ci.org/nigma/dj-cmd
+    :target: https://travis-ci.org/nigma/dj-cmd
 
 Tired of typing ``python manage.py runserver``? Just
 
