@@ -18,20 +18,20 @@ and then
 
     dj run
 
-from any project's subdirectory.
+from any project's directory.
 
 Features
 --------
 
 - saves typing
-- automatically locates ``manage.py`` script in current or parent directories
-- works great with virtualenv and on Windows
+- automatically locates ``manage.py`` script in the current or parent directories
+- works great with virtualenv, even on Windows
 
 Commands
 --------
 
 List of command aliases is a matter of personal taste, so go ahead and adjust
-it by forking the project and adding yours to the `aliases.py`_ file.
+the config or fork the project and add yours to the `aliases.py`_ file.
 
 Currently supported commands:
 
@@ -41,16 +41,26 @@ Currently supported commands:
 Config file
 +++++++++++
 
-Alternatively, additional aliases can be specified with the ``~/dj.ini`` file.
+Command aliases can also be specified using a config file.
 
-If the ``.dj.ini`` config file is present in the user's home directory,
-it is used to populate list of command aliases.
+If a ``.djcmd`` or ``.dj.ini`` config file is present in the user's home directory
+or in the ``manage.py`` base directory, it is used to populate the list
+of command aliases.
 
-Example of the config file::
+`Example <https://github.com/nigma/dj-cmd/blob/master/.djcmd>`_ of the ``.djcmd`` config file::
 
     [commands]
-    h=help
-    rs=runserver
+    cs=collectstatic --noinput
+    r=runserver
+    sh=shell
+
+    rp=runserver_plus
+    shp=shell_plus
+
+    m=migrate
+    sma=schemamigration --auto
+
+Put it in your home or in the ``manage.py`` base directory of your project.
 
 License
 -------
@@ -72,5 +82,6 @@ Other Resources
 
 - GitHub repository - https://github.com/nigma/dj-cmd
 - PyPi Package site - http://pypi.python.org/pypi/dj-cmd
+- Distutils `dev <https://github.com/nigma/django-herokuify/tarball/master#egg=django-herokuify-dev>`_ version link.
 
 .. _aliases.py: https://github.com/nigma/dj-cmd/blob/master/src/aliases.py
