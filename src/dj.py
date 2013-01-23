@@ -10,16 +10,29 @@ import sys
 
 from .aliases import DEFAULT_COMMANDS
 
-CONFIG_FILE = os.path.expanduser(os.path.join("~", ".dj.ini"))
+
+def find_config_files(script_path, file_names=(".dj.ini", ".djcmd")):
+    """
+    Locates and returns a list of config files.
+
+    By default it looks for ``.dj.ini`` or ``.djcmd`` files in:
+       - user's home directory
+       - ``manage.py`` script directory
+    """
+    directories = ["~", os.path.dirname(script_path)]
+    config_files = []
+    for directory in directories:
+        for file_name in file_names:
+            config_file = os.path.expanduser(os.path.join(directory, file_name))
+            if os.path.exists(config_file):
+                config_files.append(config_file)
+    return config_files
 
 
-def get_commands(config_file=CONFIG_FILE, section="commands",
+def get_commands(config_files, section="commands",
                  default_commands=DEFAULT_COMMANDS):
     """
-    Read alias definition from `~/dj.ini` file.
-
-    If the `.dj.ini` config file is present in the user's home directory,
-    it is used to populate list of command aliases.
+    Read alias definition from given config files.
 
     Example of config file::
 
@@ -29,23 +42,22 @@ def get_commands(config_file=CONFIG_FILE, section="commands",
     """
     commands = default_commands.copy()
 
-    if os.path.exists(config_file):
-        from ConfigParser import ConfigParser
-        parser = ConfigParser()
-        parser.read([config_file])
-        if parser.has_section(section):
-            commands.update(
-                dict(parser.items(section))
-            )
+    for config_file in config_files:
+        if os.path.exists(config_file):
+            from ConfigParser import ConfigParser
+            parser = ConfigParser()
+            parser.read([config_file])
+            if parser.has_section(section):
+                commands.update(dict(parser.items(section)))
 
     return commands
 
 
-def resolve_command(command):
+def resolve_command(command, config_files):
     """
     Lookups command in the alias dict.
     """
-    commands = get_commands()
+    commands = get_commands(config_files=config_files)
     if command and command in commands:
         command = commands[command]
     return command or ""
@@ -85,7 +97,8 @@ def run(command=None, *params):
     Locates manage script and invokes it with resolved command param.
     """
     script_path = find_script()
-    command = resolve_command(command)
+    config_files = find_config_files(script_path)
+    command = resolve_command(command, config_files=config_files)
 
     args = [sys.executable, script_path]
     if command:
