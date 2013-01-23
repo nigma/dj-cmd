@@ -1,2 +1,5 @@
 include README.rst
 include LICENSE
+include .djcmd
+include .travis.yml
+include Makefile
