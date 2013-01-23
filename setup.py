@@ -4,7 +4,7 @@
 from setuptools import setup
 
 
-version = "0.2.post1"
+version = "0.3"
 
 setup(
     name="dj-cmd",
