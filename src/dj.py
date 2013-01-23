@@ -39,6 +39,7 @@ def get_commands(config_files, section="commands",
         [commands]
         h=help
         rs=runserver
+        sma=schemamigration --auto
     """
     commands = default_commands.copy()
 
@@ -48,7 +49,9 @@ def get_commands(config_files, section="commands",
             parser = ConfigParser()
             parser.read([config_file])
             if parser.has_section(section):
-                commands.update(dict(parser.items(section)))
+                commands.update(
+                    (k, v.split()) for k, v in parser.items(section)
+                )
 
     return commands
 
@@ -102,7 +105,10 @@ def run(command=None, *params):
 
     args = [sys.executable, script_path]
     if command:
-        args.append(command)
+        if isinstance(command, (list, tuple)):
+            args.extend(command)
+        else:
+            args.append(command)
     args.extend(params)
 
     return subprocess.call(args)
