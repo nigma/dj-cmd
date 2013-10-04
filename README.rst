@@ -85,3 +85,14 @@ Other Resources
 - Distutils `dev <https://github.com/nigma/django-herokuify/tarball/master#egg=django-herokuify-dev>`_ version link.
 
 .. _aliases.py: https://github.com/nigma/dj-cmd/blob/master/src/aliases.py
+
+
+Commercial Support
+------------------
+
+This app, and many others, have been created at `en.ig.ma <http://en.ig.ma/>`_
+web & mobile development.
+
+Do you need help building your web app or api backend? Just drop us a note
+at `en@ig.ma <mailto:en@ig.ma>`_ and we will guide you from project idea
+to live website.
