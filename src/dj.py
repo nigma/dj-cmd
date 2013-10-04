@@ -116,7 +116,10 @@ def run(command=None, *params):
 
 def main():
     """Entry-point function."""
-    sys.exit(run(*sys.argv[1:]))
+    try:
+        sys.exit(run(*sys.argv[1:]))
+    except KeyboardInterrupt:
+        pass
 
 
 if __name__ == "__main__":
