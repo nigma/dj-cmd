@@ -3,8 +3,7 @@
 
 from setuptools import setup
 
-
-version = "0.3"
+version = "0.4"
 
 setup(
     name="dj-cmd",
@@ -24,7 +23,7 @@ setup(
     package_dir={"dj_cmd": "src"},
     include_package_data=True,
     classifiers=(
-        "Development Status :: 4 - Beta",
+        "Development Status :: 5 - Production/Stable",
         "Environment :: Console",
         "Environment :: Web Environment",
         "Framework :: Django",
@@ -34,7 +33,6 @@ setup(
         "Programming Language :: Python",
         "Programming Language :: Python :: 2.6",
         "Programming Language :: Python :: 2.7",
-        "Programming Language :: Python :: 3.1",
         "Programming Language :: Python :: 3.2",
         "Programming Language :: Python :: 3.3",
         "Topic :: Software Development :: Libraries :: Python Modules"
