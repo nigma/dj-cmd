@@ -1,5 +1,7 @@
-include README.rst
+include AUTHORS.rst
 include LICENSE
+include README.rst
+recursive-include src *.html *.png *.gif *js *jpg *jpeg *svg *py
 include .djcmd
 include .travis.yml
 include Makefile

@@ -6,20 +6,20 @@
     :alt: Build Status
     :target: https://travis-ci.org/nigma/dj-cmd
 
-.. image:: https://pypip.in/v/django-easy-pdf/badge.png
-    :target: https://pypi.python.org/pypi/django-easy-pdf/
+.. image:: https://pypip.in/v/dj-cmd/badge.png
+    :target: https://pypi.python.org/pypi/dj-cmd/
     :alt: Latest Version
 
-.. image:: https://pypip.in/d/django-easy-pdf/badge.png
-    :target: https://pypi.python.org/pypi/django-easy-pdf/
+.. image:: https://pypip.in/d/dj-cmd/badge.png
+    :target: https://pypi.python.org/pypi/dj-cmd/
     :alt: Downloads
 
-.. image:: https://pypip.in/license/django-easy-pdf/badge.png
-    :target: https://pypi.python.org/pypi/django-easy-pdf/
+.. image:: https://pypip.in/license/dj-cmd/badge.png
+    :target: https://pypi.python.org/pypi/dj-cmd/
     :alt: License
 
 
-Tired of typing ``python manage.py runserver``? Just
+Tired of typing ``python manage.py runserver`` to invoke Django commands? Just
 
 ::
 
@@ -37,7 +37,7 @@ Features
 --------
 
 - saves typing
-- automatically locates ``manage.py`` script in the current or parent directories
+- automatically locates Django's ``manage.py`` script in the current or parent directories
 - works great with virtualenv, even on Windows
 
 Commands
