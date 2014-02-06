@@ -6,6 +6,19 @@
     :alt: Build Status
     :target: https://travis-ci.org/nigma/dj-cmd
 
+.. image:: https://pypip.in/v/django-easy-pdf/badge.png
+    :target: https://pypi.python.org/pypi/django-easy-pdf/
+    :alt: Latest Version
+
+.. image:: https://pypip.in/d/django-easy-pdf/badge.png
+    :target: https://pypi.python.org/pypi/django-easy-pdf/
+    :alt: Downloads
+
+.. image:: https://pypip.in/license/django-easy-pdf/badge.png
+    :target: https://pypi.python.org/pypi/django-easy-pdf/
+    :alt: License
+
+
 Tired of typing ``python manage.py runserver``? Just
 
 ::
@@ -16,7 +29,7 @@ and then
 
 ::
 
-    dj run
+    dj r
 
 from any project's directory.
 
@@ -35,7 +48,7 @@ the config or fork the project and add yours to the `aliases.py`_ file.
 
 Currently supported commands:
 
-- ``run`` - runserver
+- ``r`` or ``run`` - runserver
 - any valid ``manage.py`` command
 
 Config file
@@ -50,15 +63,22 @@ of command aliases.
 `Example <https://github.com/nigma/dj-cmd/blob/master/.djcmd>`_ of the ``.djcmd`` config file::
 
     [commands]
-    cs=collectstatic --noinput
     r=runserver
-    sh=shell
-
     rp=runserver_plus
-    shp=shell_plus
+
+    sh=shell
+    sp=shell_plus
+
+    cs=collectstatic --noinput
 
     m=migrate
     sma=schemamigration --auto
+    smi=schemamigration --init
+
+    mm=makemessages -a
+    cm=compilemessages
+
+    cleanpyc=clean_pyc
 
 Put it in your home or in the ``manage.py`` base directory of your project.
 
@@ -68,21 +88,11 @@ License
 ``dj-cmd`` is released under the BSD license.
 
 
-Similar projects
-----------------
-
-This is not the first project of this kind. Other may suits you better,
-this works well for me.
-
-- http://pypi.python.org/pypi/django-shortcuts
-- http://pypi.python.org/pypi/Django-dj
-
 Other Resources
 ---------------
 
 - GitHub repository - https://github.com/nigma/dj-cmd
 - PyPi Package site - http://pypi.python.org/pypi/dj-cmd
-- Distutils `dev <https://github.com/nigma/django-herokuify/tarball/master#egg=django-herokuify-dev>`_ version link.
 
 .. _aliases.py: https://github.com/nigma/dj-cmd/blob/master/src/aliases.py
 

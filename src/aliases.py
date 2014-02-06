@@ -6,4 +6,5 @@ from __future__ import unicode_literals
 
 DEFAULT_COMMANDS = {
     "run": "runserver",
+    "r": "runserver",
 }

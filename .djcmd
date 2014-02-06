@@ -4,12 +4,19 @@
 ; project's manage.py directory
 
 [commands]
-cs=collectstatic --noinput
 r=runserver
-sh=shell
-
 rp=runserver_plus
-shp=shell_plus
+
+sh=shell
+sp=shell_plus
+
+cs=collectstatic --noinput
 
 m=migrate
 sma=schemamigration --auto
+smi=schemamigration --init
+
+mm=makemessages -a
+cm=compilemessages
+
+cleanpyc=clean_pyc
