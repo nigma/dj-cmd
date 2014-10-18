@@ -45,7 +45,10 @@ def get_commands(config_files, section="commands",
 
     for config_file in config_files:
         if os.path.exists(config_file):
-            from ConfigParser import ConfigParser
+            try:
+                from configparser import ConfigParser
+            except ImportError:
+                from ConfigParser import ConfigParser
             parser = ConfigParser()
             parser.read([config_file])
             if parser.has_section(section):
