@@ -9,14 +9,12 @@ rp=runserver_plus
 
 sh=shell
 sp=shell_plus
+dbs=dbshell
 
 cs=collectstatic --noinput
 
 m=migrate
-sma=schemamigration --auto
-smi=schemamigration --init
-
-mm=makemessages -a
-cm=compilemessages
+mm=makemigrations
+sm=showmigrations
 
 cleanpyc=clean_pyc
