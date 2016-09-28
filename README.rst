@@ -1,5 +1,5 @@
-``dj cmd`` shortcut for ``python manage.py commands``
-=====================
+``dj cmd``
+=====================================================
 
 .. image:: https://img.shields.io/pypi/l/dj-cmd.svg
     :target: https://raw.githubusercontent.com/nigma/dj-cmd/master/LICENSE
@@ -22,7 +22,7 @@
     :alt: Supports Wheel format
 
 
-Tired of typing ``python manage.py runserver`` to invoke Django commands? Just
+Tired of typing long Django commands like ``python manage.py runserver``? Just
 
 ::
 
