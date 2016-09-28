@@ -1,5 +1,5 @@
 ``dj cmd``
-=====================================================
+==========
 
 .. image:: https://img.shields.io/pypi/l/dj-cmd.svg
     :target: https://raw.githubusercontent.com/nigma/dj-cmd/master/LICENSE
