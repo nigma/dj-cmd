@@ -35,7 +35,7 @@ setup(
     package_dir={"dj_cmd": "src"},
     include_package_data=True,
     keywords="django command shortcuts",
-    classifiers=(
+    classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Environment :: Console",
         "Environment :: Web Environment",
@@ -53,7 +53,7 @@ setup(
         "Programming Language :: Python :: 3.4",
         "Programming Language :: Python :: 3.5",
         "Topic :: Software Development :: Libraries :: Python Modules"
-    ),
+    ],
     tests_require=["django>=1.3"],
     entry_points={
         "console_scripts": [
