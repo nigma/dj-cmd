@@ -1,22 +1,25 @@
-``dj cmd``, for short
+``dj cmd`` shortcut for ``python manage.py commands``
 =====================
 
-.. image::
-    https://api.travis-ci.org/nigma/dj-cmd.png?branch=master
-    :alt: Build Status
-    :target: https://travis-ci.org/nigma/dj-cmd
-
-.. image:: https://pypip.in/v/dj-cmd/badge.png
-    :target: https://pypi.python.org/pypi/dj-cmd/
-    :alt: Latest Version
-
-.. image:: https://pypip.in/d/dj-cmd/badge.png
-    :target: https://pypi.python.org/pypi/dj-cmd/
-    :alt: Downloads
-
-.. image:: https://pypip.in/license/dj-cmd/badge.png
-    :target: https://pypi.python.org/pypi/dj-cmd/
+.. image:: https://img.shields.io/pypi/l/dj-cmd.svg
+    :target: https://raw.githubusercontent.com/nigma/dj-cmd/master/LICENSE
     :alt: License
+
+.. image:: https://secure.travis-ci.org/nigma/dj-cmd.svg?branch=master
+    :target: http://travis-ci.org/nigma/dj-cmd
+    :alt: Build Status
+
+.. image:: https://img.shields.io/pypi/v/dj-cmd.svg
+    :target: https://pypi.python.org/pypi/dj-cmd/
+    :alt: Latest PyPI version
+
+.. image:: https://img.shields.io/pypi/dm/dj-cmd.svg
+    :target: https://pypi.python.org/pypi/dj-cmd/
+    :alt: Number of PyPI downloads
+
+.. image:: https://img.shields.io/pypi/wheel/dj-cmd.svg
+    :target: https://pypi.python.org/pypi/dj-cmd/
+    :alt: Supports Wheel format
 
 
 Tired of typing ``python manage.py runserver`` to invoke Django commands? Just
@@ -46,7 +49,7 @@ Commands
 List of command aliases is a matter of personal taste, so go ahead and adjust
 the config or fork the project and add yours to the `aliases.py`_ file.
 
-Currently supported commands:
+Predefined shortcuts include:
 
 - ``r`` or ``run`` - runserver
 - any valid ``manage.py`` command
@@ -54,7 +57,7 @@ Currently supported commands:
 Config file
 +++++++++++
 
-Command aliases can also be specified using a config file.
+Command aliases can be specified in a config file.
 
 If a ``.djcmd`` or ``.dj.ini`` config file is present in the user's home directory
 or in the ``manage.py`` base directory, it is used to populate the list
@@ -68,15 +71,13 @@ of command aliases.
 
     sh=shell
     sp=shell_plus
+    dbs=dbshell
 
     cs=collectstatic --noinput
 
     m=migrate
-    sma=schemamigration --auto
-    smi=schemamigration --init
-
-    mm=makemessages -a
-    cm=compilemessages
+    mm=makemigrations 
+    sm=showmigrations
 
     cleanpyc=clean_pyc
 
@@ -93,6 +94,7 @@ Other Resources
 
 - GitHub repository - https://github.com/nigma/dj-cmd
 - PyPi Package site - http://pypi.python.org/pypi/dj-cmd
+- Sample config file - https://github.com/nigma/dj-cmd/blob/master/.djcmd
 
 .. _aliases.py: https://github.com/nigma/dj-cmd/blob/master/src/aliases.py
 
@@ -103,6 +105,6 @@ Commercial Support
 This app, and many others, have been created at `en.ig.ma <http://en.ig.ma/>`_
 web & mobile development.
 
-Do you need help building your web app or api backend? Just drop us a note
-at `en@ig.ma <mailto:en@ig.ma>`_ and we will guide you from project idea
-to live website.
+Want to create a cutting edge web or mobile app or need help with setting up backend architecture?
+Just drop us a note at `en@ig.ma <mailto:en@ig.ma>`_ and we will guide you from idea
+to a final product.
